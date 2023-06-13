@@ -1,0 +1,59 @@
+[
+  {
+    "lang": "dart",
+    "fe": 1,
+    "type": "framework",
+    "name": "flutter",
+    "target": [
+      "mobile",
+      "web",
+      "desktop",
+      "server"
+    ]
+  },
+  {
+    "lang": "javascript",
+    "fe": 1,
+    "type": "framework",
+    "name": "react.js",
+    "target": [
+      "web"
+    ]
+  },
+  {
+    "lang": "javascript",
+    "fe": 1,
+    "type": "framework",
+    "name": "vue.js",
+    "target": [
+      "web"
+    ]
+  },
+  {
+    "lang": "javascript",
+    "fe": 1,
+    "type": "framework",
+    "name": "next.js",
+    "target": [
+      "web"
+    ]
+  },
+  {
+    "lang": "javascript",
+    "fe": 1,
+    "type": "framework",
+    "name": "astro.js",
+    "target": [
+      "web"
+    ]
+  },
+  {
+    "lang": "javascript",
+    "fe": 0,
+    "type": "framework",
+    "name": "express.js",
+    "target": [
+      "server"
+    ]
+  }
+]
