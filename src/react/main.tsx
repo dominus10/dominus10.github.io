@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { ChangeEvent, MouseEvent, useEffect, useState } from 'react';
 import { AppBar, Button, Container, CssBaseline, Divider, FormControlLabel, FormGroup, FormLabel, IconButton, Paper, Switch, ThemeProvider, Toolbar, Typography, createTheme, useMediaQuery } from "@mui/material";
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
 import t from '../data/t.json'
-import '../css/main.css'
+import { StyledDiv, StyledImg, StyledLI, StyledOL } from './style'
 import platformSvg from '../assets/platform.svg'
 
 const Main: React.FC = () => {
@@ -31,16 +31,16 @@ const Main: React.FC = () => {
 
   const ToolbarComponents = () => (
     <div style={{ display: 'flex', flexDirection: mobileMenu ? 'column' : 'row' }}>
-      <div style={{ display: 'flex', flexDirection: mobileMenu ? 'column' : 'row', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
         <FormGroup>
           <FormControlLabel
-            control={<Switch checked={mode} onChange={() => setMode((prev: boolean) => !prev)} />}
+            control={<Switch checked={mode} onChange={(e) => { stopProp(e); setMode((prev: boolean) => !prev); }} onClick={(e) => stopProp(e)} />}
             label={<FormLabel sx={{ color: mode ? '#90caf9' : '#1976d2', fontSize: 14 }}>LIGHT | DARK</FormLabel>}
           />
         </FormGroup >
       </div>
-      <Button>Project</Button>
-      <Button>About</Button>
+      <Button onClick={(e) => { stopProp(e) }}>Project</Button>
+      <Button onClick={(e) => { stopProp(e) }}>About</Button>
     </div >
   )
 
@@ -90,6 +90,10 @@ const Main: React.FC = () => {
     }
   }
 
+  function stopProp(e: ChangeEvent<HTMLInputElement> | MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
+    e.stopPropagation()
+  }
+
   function toggleMobileMenu() {
     setMobileMenu(prev => !prev)
   }
@@ -113,9 +117,9 @@ const Main: React.FC = () => {
             )}
             {isMobile && (
               <>
-                <div style={{height: 56}}>
+                <div style={{ height: 56 }}>
                   <IconButton color="primary" onClick={() => toggleMobileMenu()}>
-                    {isMobile && !mobileMenu ? <MenuIcon /> : <CloseIcon/>}
+                    {isMobile && !mobileMenu ? <MenuIcon /> : <CloseIcon />}
                   </IconButton>
                 </div>
                 {mobileMenu && isMobile && (
@@ -149,16 +153,21 @@ const Main: React.FC = () => {
             ))}
           </Container>
         ))} */}
-          <ol>
+          <StyledOL>
             {[0, 1, 2].map((index) => (
-              <li key={index}>
-                <div
-                  onClick={() => updateListBG(index)} style={{ border: `1px solid ${listBG.data[index]}`, borderRadius: 10, filter: index == currentHoverIndex.data ? 'none' : 4 == currentHoverIndex.data ? 'none' : 'grayscale(0.90)', opacity: index == currentHoverIndex.data ? 0.8 : 4 == currentHoverIndex.data ? 0.8 : 0.08 }}>
-                  <img src={platformSvg} />
-                </div>
-              </li>
+              <StyledLI key={index}>
+                <StyledDiv
+                  onClick={() => updateListBG(index)} style={{
+                    border: `1px solid ${listBG.data[index]}`,
+                    borderRadius: 10, 
+                    filter: index == currentHoverIndex.data ? 'none' : 4 == currentHoverIndex.data ? 'none' : 'grayscale(0.90)',
+                    opacity: index == currentHoverIndex.data ? 0.8 : 4 == currentHoverIndex.data ? 0.8 : 0.08
+                  }}>
+                  <StyledImg src={platformSvg} />
+                </StyledDiv>
+              </StyledLI>
             ))}
-          </ol>
+          </StyledOL>
         </div>
       </Paper>
     </CssBaseline>

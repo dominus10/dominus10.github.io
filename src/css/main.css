@@ -1,3 +1,7 @@
+body{
+  overflow: hidden;
+}
+
 img {
   max-width: 100%;
   max-height: 100%;
@@ -16,16 +20,16 @@ ol {
 }
 
 li>div {
-  width: calc(33vw - 10px);
+  width: calc(33vw - 15px);
   list-style-type: none;
-  margin: 0 5px;
+  margin: 0px;
   height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-li:first-child {
+li:first-of-type {
   margin-left: 5px !important;
 }
 
