@@ -1,4 +1,4 @@
-# Setup
+### Setup
 
 ```
 npm install
@@ -7,50 +7,9 @@ sudo docker run -p 3000:3000 portfolio-fe
 ```
 
 
-# Astro Starter Kit: Minimal
-
-```
-npm create astro@latest -- --template minimal
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Tech Stack
+| Framework | Library | Language | Container & Images |
+| --- | --- | --- | --- |
+| <a href="https://astro.build"><img src="https://astro.build/assets/press/astro-logo-dark.png" width="150px"/></a> | <a href="https://mui.com/"><img src="https://mui.com/static/logo.png" width="50px"/></a> | <a href="https://www.typescriptlang.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" width="50px"/></a> | <a href="https://www.docker.com/"><img src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" width="50px"/></a> |
+|  | <a href="https://react.dev"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="50px"/></a> |  | <a href="https://hub.docker.com/_/node/"><img src="https://nodejs.org/static/images/logos/nodejs.png" width="100px"/></a> |
+|  | <a href="https://emotion.sh/docs/introduction"><img src="https://raw.githubusercontent.com/emotion-js/emotion/main/emotion.png" width="50px"/></a> |  | <a href="https://www.alpinelinux.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Alpine_Linux.svg/1200px-Alpine_Linux.svg.png" width="150px"/></a> |
