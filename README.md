@@ -1,3 +1,12 @@
+# Setup
+
+```
+npm install
+sudo docker build -t portfolio-fe .
+sudo docker run -p 3000:3000 portfolio-fe
+```
+
+
 # Astro Starter Kit: Minimal
 
 ```
