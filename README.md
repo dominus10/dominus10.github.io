@@ -1,6 +1,7 @@
 ### Setup
 
 ```
+git clone https://github.com/dominus10/dominus10.github.io.git
 npm install
 sudo docker build -t portfolio-fe .
 sudo docker run -p 3000:3000 portfolio-fe
