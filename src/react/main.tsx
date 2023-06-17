@@ -138,31 +138,28 @@ const Main: React.FC = () => {
         </AppBar>
 
         <div style={{ display: 'flex', marginTop: 70 }}>
-          {/* {[
-          { title: 'Framework', data: framework.data },
-          { title: 'Language', data: language.data },
-          { title: 'Platform', data: platform.data }
-        ].map((category: any, categoryIndex: number) => (
-          <Container key={categoryIndex}>
-            <Typography variant='h6'>{category.title}</Typography>
-            <Divider style={{ marginBottom: 10 }} />
-            {category.data.map((element: string, index: number) => (
-              <Button key={index} variant="outlined" style={{ padding: '1px 5px', fontSize: 12, width: 100 }}>
-                {element}
-              </Button>
-            ))}
-          </Container>
-        ))} */}
           <StyledOL>
-            {[0, 1, 2].map((index) => (
+            {[
+              { title: 'Framework', data: framework.data },
+              { title: 'Language', data: language.data },
+              { title: 'Platform', data: platform.data }
+            ].map((e: { title: string, data: string[] }, index: number) => (
               <StyledLI key={index}>
                 <StyledDiv
                   onClick={() => updateListBG(index)} style={{
                     border: `1px solid ${listBG.data[index]}`,
-                    borderRadius: 10, 
+                    borderRadius: 10,
                     filter: index == currentHoverIndex.data ? 'none' : 4 == currentHoverIndex.data ? 'none' : 'grayscale(0.90)',
                     opacity: index == currentHoverIndex.data ? 0.8 : 4 == currentHoverIndex.data ? 0.8 : 0.08
                   }}>
+                  <Container sx={{ zIndex: 3 }}>
+                    <Typography variant='h6'>{e.title}</Typography>
+                    {e.data.map((element: string, index: number) => (
+                      <Button key={index} variant="outlined" style={{ padding: '1px 5px', fontSize: 12, width: 100 }}>
+                        {element}
+                      </Button>
+                    ))}
+                  </Container>
                   <StyledImg src={platformSvg} />
                 </StyledDiv>
               </StyledLI>

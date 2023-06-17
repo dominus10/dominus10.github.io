@@ -4,6 +4,8 @@ import styled from '@emotion/styled'
 export const StyledImg = styled('img')`
   max-width: 100%;
   max-height: 100%;
+  position: absolute;
+  z-index: 2;
 `
 export const StyledOL = styled('ol')`
   display: inline-block;
@@ -31,9 +33,12 @@ export const StyledDiv = styled('div')`
   list-style-type: none;
   margin: 0 5px;
   height: calc(100vh - 80px);
+  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  z-index: 1;
   @media only screen and (max-width: 900px) {
     width: calc(100vw - 20px);
     height: calc(33vh - 27px);
