@@ -15,11 +15,11 @@ export const StyledOL = styled('ol')`
 
 export const StyledLI = styled('li')`
   display: inline-block;
-  &:first-child{
+  &:first-of-type{
     margin-left: 15px !important;
   }
   @media only screen and (max-width: 900px) {
-    &:first-child{
+    &:first-of-type{
       margin-left: 5px !important;
     }
     margin-left: 5px !important;
