@@ -2,7 +2,8 @@ import { ChangeEvent, MouseEvent, useEffect, useState } from 'react';
 import { AppBar, Button, Container, CssBaseline, Divider, FormControlLabel, FormGroup, FormLabel, IconButton, Paper, Switch, ThemeProvider, Toolbar, Typography, createTheme, useMediaQuery } from "@mui/material";
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
 import t from '../data/t.json'
-import { StyledDiv, StyledImg, StyledLI, StyledOL } from './style'
+import { Home as HomeComponent } from './home'
+// import { StyledDiv, StyledImg, StyledLI, StyledOL } from './style'
 import platformSvg from '../assets/platform.svg'
 
 const Main: React.FC = () => {
@@ -131,14 +132,12 @@ const Main: React.FC = () => {
                     </CssBaseline>
                   </div>
                 )}</>
-
-
             )}
           </Toolbar>
         </AppBar>
 
         <div style={{ display: 'flex', marginTop: 70 }}>
-          <StyledOL>
+          {/* <StyledOL>
             {[
               { title: 'Framework', data: framework.data },
               { title: 'Language', data: language.data },
@@ -164,7 +163,8 @@ const Main: React.FC = () => {
                 </StyledDiv>
               </StyledLI>
             ))}
-          </StyledOL>
+          </StyledOL> */}
+          <HomeComponent/>
         </div>
       </Paper>
     </CssBaseline>

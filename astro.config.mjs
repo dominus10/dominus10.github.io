@@ -9,5 +9,7 @@ export default defineConfig({
   output: "server",
   adapter: node({
     mode: "standalone"
-  })
+  }),
+  plugins: [react({ jsxImportSource: '@emotion/react' })],
+  site: 'https://dominus10.github.io',
 });
