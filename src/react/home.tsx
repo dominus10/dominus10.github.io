@@ -1,25 +1,42 @@
-/** @jsxImportSource @emotion/react */
-
 import { Typography } from "@mui/material"
+import { useEffect, useState } from "react";
 const Home: React.FC = () => {
+  const items = [
+    'Hello!',
+    'My name is Nicholas Inggih, and I am a Javascript fullstack engineer and Flutter application developer, hailing from Indonesia.',
+    'I am capable to build range from simple static HTML to cross platform application.',
+    'Outside of programming, I draw illustration as well, and I also enjoy to play both strategy-themed board and video games.'
+  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => {
+        if (prevIndex < items.length - 1) {
+          return prevIndex + 1;
+        } else {
+          clearInterval(interval);
+          return prevIndex;
+        }
+      });
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [items]);
+
   return (
-    <>
-      <Typography 
-        sx={{
-          m: 3
-        }}
-        variant="body1" >
-        Welcome to my digital domain! I am a versatile developer specializing in web development and cross-platform application creation. With a passion for crafting exceptional user experiences and transforming ideas into reality, I am your go-to professional for all your digital needs.
-        <br />
-        Combining the artistry of web design and the power of coding, I create visually stunning websites that not only captivate but also provide seamless navigation and functionality. From responsive layouts to interactive elements, I strive to deliver websites that leave a lasting impression.
-        <br />
-        In addition to web development, I excel in cross-platform application development. Whether it's an iOS, Android, or desktop application, I harness the latest technologies to build versatile apps that cater to a wide audience. With a user-centric approach, I ensure that the applications I develop are intuitive, efficient, and engaging.
-        <br />
-        Dedicated to continuous growth and learning, I stay up-to-date with industry trends and best practices, allowing me to deliver cutting-edge solutions tailored to your specific requirements. So, let's collaborate and embark on a digital journey together, where we'll turn your ideas into exceptional digital experiences.
-        <br />
-      </Typography>
-    </>
-  )
-}
+    <div className="fade-in-container">
+      {items.map((item, index) => (
+        <div
+          key={index}
+          className={`fade-in-item ${currentIndex === index ? 'visible' : ''}`}
+          style={{ animationDelay: `${index * 1000}ms` }}
+        >
+          <Typography marginX={10} variant="h5">{item}</Typography>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export { Home }
