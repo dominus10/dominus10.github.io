@@ -8,7 +8,7 @@ export default defineConfig({
     site: 'https://dominus10.github.io/',
   },
   integrations: [react()],
-  output: "server",
+  output: "static",
   adapter: node({
     mode: "standalone"
   }),
