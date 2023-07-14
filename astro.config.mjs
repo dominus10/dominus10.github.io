@@ -5,12 +5,13 @@ import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
+  build:{
+    site: 'https://dominus10.github.io/',
+  },
   integrations: [react()],
   output: "server",
   adapter: node({
     mode: "standalone"
   }),
-  site: 'https://dominus10.github.io/',
-  base: '/',
   plugins: [react({ jsxImportSource: '@emotion/react' })],
 });
