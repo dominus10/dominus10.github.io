@@ -22,11 +22,11 @@ jobs:
       #     mkdir -p "./$REPO_NAME"
       #     mv ./temp-build/* "./$REPO_NAME/"
 
-      # - name: Commit and Push
-      #   run: |
-      #     git add .
-      #     git commit -m "Deploy $REPO_NAME build"
-      #     git push
+      - name: Commit and Push
+        run: |
+          git add .
+          git commit -m "Deploy $REPO_NAME build"
+          git push
 
   deploy:
     runs-on: ubuntu-latest
