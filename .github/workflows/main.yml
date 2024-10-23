@@ -14,8 +14,9 @@ jobs:
       - name: Download from Dndkit repo
         uses: actions/download-artifact@v4
         with:
+          repository: dominus10/dndkit-example
           name: production-files
-          path: build
+          path: ./build
       - name: Display structure of downloaded files
         run: |
           ls -R build
