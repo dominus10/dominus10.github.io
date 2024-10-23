@@ -19,6 +19,7 @@ jobs:
         run: |
           git config --global user.email "38601700+dominus10@users.noreply.github.com"
           git config --global user.name "gh-pages action bot"
+          ls
           git add ./dndkit
           git commit -m "Deploy $REPO_NAME build"
           git subtree push --prefix ./dndkit origin gh-pages
