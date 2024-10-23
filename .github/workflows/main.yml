@@ -13,6 +13,12 @@ jobs:
 
       - name: Download from Dndkit repo
         uses: actions/download-artifact@v4
+        with:
+          name: production-files
+          path: build
+      - name: Display structure of downloaded files
+        run: |
+          ls -R build
 
   deploy:
     runs-on: ubuntu-latest
