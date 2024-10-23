@@ -14,7 +14,7 @@ jobs:
       - name: Download from Dndkit repo
         uses: actions/download-artifact@v4
         with:
-          name: repo-build
+          name: production-files
           path: ./temp-build
 
       - name: Move to temp subdir
@@ -29,8 +29,17 @@ jobs:
           git commit -m "Deploy $REPO_NAME build"
           git push
 
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to GH-Pages
+    needs: download-build
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    steps:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          destination_dir: dndkit
