@@ -14,21 +14,14 @@ jobs:
       - name: Download from Dndkit repo
         uses: actions/download-artifact@v4
         with:
-          path: ./temp-build
-
-      # - name: Move to temp subdir
-      #   run: |
-      #     REPO_NAME="${{ github.event.client_payload.repository }}"
-      #     mkdir -p "./$REPO_NAME"
-      #     mv ./temp-build/* "./$REPO_NAME/"
-
+          path: ./dndkit
       - name: Commit and Push
         run: |
           git config --global user.email "38601700+dominus10@users.noreply.github.com"
           git config --global user.name "gh-pages action bot"
-          git add .
+          git add ./dndkit
           git commit -m "Deploy $REPO_NAME build"
-          git push
+          git subtree push --prefix ./dndkit origin gh-pages
 
   deploy:
     runs-on: ubuntu-latest
